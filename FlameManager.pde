@@ -31,11 +31,23 @@ class FlameManager {
 
 
   void display () {
+    for (int i = 0; i < 5; i++) { // 畫火焰
+      flameFrameCount[i] ++ ;    
+      int flameFrame = floor ( flameFrameCount[i] / (yourFrameRate/5) ) ; // 這個火焰的 影格  要播哪一張火焰圖 
 
-  }
+      if ( flameFrame < 5) {
+        image(flameImgs[flameFrame ], flameX[i], flameY[i]);
+      }
+    }
+  } 
 
 
   void add (float x, float y) {
+    flameFrameCount[ boomIndex ] = 0;
 
+    flameX [ boomIndex ] = x ;
+    flameY [ boomIndex ] = y ;
+    boomIndex ++ ;
+    boomIndex %= 5 ;
   }
 }
