@@ -21,6 +21,7 @@ class Background {
   void display() {
     switch(gameState) {
     case GAME_START:
+      image(start2, 0, 0);
       if (mouseX>=150 && mouseX<=450 && mouseY>=350 && mouseY<=430) {
         image(start1, 0, 0);
         if (mousePressed) {
